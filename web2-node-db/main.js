@@ -1,13 +1,9 @@
 var http = require('http');
-var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
 var template = require('./lib/template.js');
-var path = require('path');
-var sanitizeHtml = require('sanitize-html');
-var db = require('./lib/mysql.js')
-
-db.connect();
+var db = require('./lib/db.js')
+var topic = require('./lib/topic.js')
 
 
 var app = http.createServer(function (request, response) {
@@ -16,17 +12,7 @@ var app = http.createServer(function (request, response) {
   var pathname = url.parse(_url, true).pathname;
   if (pathname === '/') {
     if (queryData.id === undefined) {
-      db.query(`SELECT * FROM topic`, function (err, topics) {
-        var title = 'Welcome';
-        var description = 'Hello, Node.js';
-        var list = template.list(topics);
-        var html = template.HTML(title, list,
-          `<h2>${title}</h2>${description}`,
-          `<a href="/create">create</a>`
-        );
-        response.writeHead(200);
-        response.end(html);
-      });
+      topic.home(request, response);
     } else {
       db.query(`SELECT * FROM topic`, function (err, topics) {
         if (err) {
@@ -159,7 +145,6 @@ var app = http.createServer(function (request, response) {
     request.on('end', function () {
       var post = qs.parse(body);
       var id = post.id;
-      var filteredId = path.parse(id).base;
       db.query(`DELETE FROM topic WHERE id=?`, [post.id], function (err, result) {
         if (err) {
           throw err;
