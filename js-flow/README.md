@@ -17,3 +17,6 @@ https://www.evernote.com/l/AlM-iFnpJzBLzLdX4CwqAsaRNnPoRQCixZ8/
 
 ### [Javascript 핵심 개념 알아보기 - JS Flow] Section 5. Prototype
 https://www.evernote.com/l/AlPKoylIBGJPF7OlnAtdZzcR0nDCcga1suA/
+
+### [Javascript 핵심 개념 알아보기 - JS Flow] Section 6. Class
+https://www.evernote.com/l/AlO_WTJi_9hK1Lv0i3bkbfI5HQL-VTEqH44/
