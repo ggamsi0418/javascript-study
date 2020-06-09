@@ -24,7 +24,9 @@
     "compression": "^1.7.4",
     "cookie": "^0.4.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "helmet": "^3.22.0",
-    "sanitize-html": "^1.26.0"
+    "sanitize-html": "^1.26.0",
+    "session-file-store": "^1.4.0"
   }
 }
