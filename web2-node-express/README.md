@@ -11,3 +11,6 @@ https://www.evernote.com/l/AlOcExIz7CtLc5y7SAXhAynQ8LWYlwe63PM/
 
 ### [생활코딩 - Web 2 Node.js & Express] Section 3. Passport.js
 https://www.evernote.com/l/AlM4eOCDlKZCSZ-miDNAs9jj9ocww7HSy_c/
+
+### [생활코딩 - Web 2 Node.js & Express] Section 4. Multi User on Passport.js
+https://www.evernote.com/l/AlOTr2rQWDhPgYXh06qvm1QhXw6IkNEd-bg/

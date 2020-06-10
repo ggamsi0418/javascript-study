@@ -1,10 +1,8 @@
-module.exports = function (app) {
+var db = require('../lib/db.js');
+var bcrypt = require('bcrypt');
 
-    var authData = {
-        email: 'ggamsi0418@naver.com',
-        password: '01032645255',
-        nickname: 'Jungbin'
-    };
+
+module.exports = function (app) {
 
     var passport = require('passport'),
         LocalStrategy = require('passport-local').Strategy;
@@ -13,31 +11,43 @@ module.exports = function (app) {
     app.use(passport.session());
 
     passport.serializeUser(function (user, done) {
-        done(null, user.email);
+        console.log('serializeUser', user)
+
+        done(null, user.id);
     });
 
     passport.deserializeUser(function (id, done) {
-        done(null, authData);
+        var user = db.get('users').find({
+            id: id
+        }).value();
+        console.log('deserializeUser', id, user)
+        done(null, user);
     });
 
     passport.use(new LocalStrategy({
             usernameField: 'email',
             passwordField: 'pwd'
         },
-        function (username, password, done) {
-            if (username === authData.email) {
-                if (password === authData.password) {
-                    return done(null, authData, {
-                        message: 'Welcome.'
-                    });
-                } else {
-                    return done(null, false, {
-                        message: 'Incorrect password.'
-                    });
-                }
+        function (email, password, done) {
+            console.log('LocalStrategy', email, password)
+            var user = db.get('users').find({
+                email: email
+            }).value();
+            if (user) {
+                bcrypt.compare(password, user.password, function (err, result) {
+                    if (result) {
+                        return done(null, user, {
+                            message: 'Welcome.'
+                        });
+                    } else {
+                        return done(null, false, {
+                            message: 'Password is not correct.'
+                        });
+                    }
+                });
             } else {
                 return done(null, false, {
-                    message: 'Incorrect username.'
+                    message: 'There is no email.'
                 });
             }
         }
