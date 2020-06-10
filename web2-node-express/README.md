@@ -8,3 +8,6 @@ https://www.evernote.com/l/AlPOe9WFeVhMo5_8E1_gPO-DEZFLLzNi0yk/
 
 ### [생활코딩 - Web 2 Node.js & Express] Section 2. Express Session & Auth
 https://www.evernote.com/l/AlOcExIz7CtLc5y7SAXhAynQ8LWYlwe63PM/
+
+### [생활코딩 - Web 2 Node.js & Express] Section 3. Passport.js
+https://www.evernote.com/l/AlM4eOCDlKZCSZ-miDNAs9jj9ocww7HSy_c/
