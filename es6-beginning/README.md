@@ -11,3 +11,6 @@ https://www.evernote.com/l/AlMQLxGj5mVN8aX13v4CJe2_RyXH5VLBZsA/
 
 ### [Javascript ES6+ 제대로 알아보기 - 초급]  Section 3. Default Parameter
 https://www.evernote.com/l/AlN67KwKBhNFuopC6qLzWZLJM0UCj2lRClA/
+
+###  [Javascript ES6+ 제대로 알아보기 - 초급]  Section 4. Rest Parameter
+https://www.evernote.com/l/AlP6qGDOZwlKIatxfFm5R8-xMVCQ1A0u4HI/
