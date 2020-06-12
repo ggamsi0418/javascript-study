@@ -17,3 +17,6 @@ https://www.evernote.com/l/AlP6qGDOZwlKIatxfFm5R8-xMVCQ1A0u4HI/
 
 ### [Javascript ES6+ 제대로 알아보기 - 초급]  Section 5. Spread Operator
 https://www.evernote.com/l/AlNKkUdukEZAtpa1qmaHfcL6-hpOp6X1oHc/
+
+### [Javascript ES6+ 제대로 알아보기 - 초급]  Section 6. Enhanced Object Functionalities
+https://www.evernote.com/l/AlMnm9YXhnxGSJfbFp6hCd9p0JuRk12u-nU/
