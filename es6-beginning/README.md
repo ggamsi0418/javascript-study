@@ -21,5 +21,8 @@ https://www.evernote.com/l/AlNKkUdukEZAtpa1qmaHfcL6-hpOp6X1oHc/
 ### [Javascript ES6+ 제대로 알아보기 - 초급]  Section 6. Enhanced Object Functionalities
 https://www.evernote.com/l/AlMnm9YXhnxGSJfbFp6hCd9p0JuRk12u-nU/
 
-###  [Javascript ES6+ 제대로 알아보기 - 초급]  Section 7. Arrow Function
+### [Javascript ES6+ 제대로 알아보기 - 초급]  Section 7. Arrow Function
 https://www.evernote.com/l/AlPhVOTb0bxOKoCN8Cx0L1DIsfNT_wJnJ0k/
+
+### [Javascript ES6+ 제대로 알아보기 - 초급]  Section 8. Function
+https://www.evernote.com/l/AlPsMDd2tsJG_JwCynhVY7q7QvAQwE95iGU/
