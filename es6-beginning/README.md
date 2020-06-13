@@ -26,3 +26,6 @@ https://www.evernote.com/l/AlPhVOTb0bxOKoCN8Cx0L1DIsfNT_wJnJ0k/
 
 ### [Javascript ES6+ 제대로 알아보기 - 초급]  Section 8. Function
 https://www.evernote.com/l/AlPsMDd2tsJG_JwCynhVY7q7QvAQwE95iGU/
+
+### [Javascript ES6+ 제대로 알아보기 - 초급]  Section 9. Destructuring Assignment
+https://www.evernote.com/l/AlPD6DJ2eF1H1Z3nupAky46Gn1TWouciw6I/
