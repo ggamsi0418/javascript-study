@@ -10,3 +10,7 @@ https://www.evernote.com/l/AlMHlp_AP9tE6pxz_Kfe7ChmP-3mRAH2xKI/
 https://www.evernote.com/l/AlPgNULxQmFBG7fLx41XZfHrxmaybL1--g4/
 
 ### [Javascript ES6+ 제대로 알아보기 - 중급]  Section 4. Generator
+https://www.evernote.com/l/AlOq0T_375ZPEqLENqgY3HK98W6RtR4ztBc/
+
+### [Javascript ES6+ 제대로 알아보기 - 중급]  Section 5. Class
+https://www.evernote.com/l/AlPPz1BFxiZGgrIupVCurg1_KYCCSLyOjWA/
