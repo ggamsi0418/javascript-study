@@ -14,3 +14,6 @@ https://www.evernote.com/l/AlOq0T_375ZPEqLENqgY3HK98W6RtR4ztBc/
 
 ### [Javascript ES6+ 제대로 알아보기 - 중급]  Section 5. Class
 https://www.evernote.com/l/AlPPz1BFxiZGgrIupVCurg1_KYCCSLyOjWA/
+
+### [Javascript ES6+ 제대로 알아보기 - 중급]  Section 6. Promise
+https://www.evernote.com/l/AlObsuio5RtMA5Gx0R_C0jn6jumIRC9fFOo/
