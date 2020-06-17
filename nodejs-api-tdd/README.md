@@ -17,3 +17,6 @@ https://www.evernote.com/l/AlOCQF0G52RDHaA2qVMsR3DduFs-42lxQ8o/
 
 ### [테스트주도개발(TDD)로 만드는 NodeJS API 서버] Section 5. REST API란
 https://www.evernote.com/l/AlMX3Pia7ppEGYh0uX4Coa-jzu5E1DE-7gg/
+
+### [테스트주도개발(TDD)로 만드는 NodeJS API 서버] Section 6. 테스트 주도 개발 (TDD)
+https://www.evernote.com/l/AlNBQP3OewxEGaHjIUO--j5-sTPHqf50ws8/
