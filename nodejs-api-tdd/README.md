@@ -11,3 +11,6 @@ https://www.evernote.com/l/AlNHsTf1WEBL_I71LfH1tvh82fDnQwTnoPw/
 
 ### [테스트주도개발(TDD)로 만드는 NodeJS API 서버] Section 3. 익스프레스(ExpressJS) 기초
 https://www.evernote.com/l/AlNX04doclBNe6GWuu6EeZO3wtLdLZeOfKw/
+
+### [테스트주도개발(TDD)로 만드는 NodeJS API 서버] Section 4. npm에 대해 좀 더 알아보기
+https://www.evernote.com/l/AlOCQF0G52RDHaA2qVMsR3DduFs-42lxQ8o/

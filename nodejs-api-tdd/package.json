@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-api-tdd",
+  "version": "1.0.0",
+  "description": "### [테스트주도개발(TDD)로 만드는 NodeJS API 서버] Section 0. 오리엔테이션 https://www.evernote.com/l/AlO8rsawdGhH45cqlU-Q0TssgqSID6nzKL8/",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
