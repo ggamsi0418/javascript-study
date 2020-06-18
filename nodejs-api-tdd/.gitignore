@@ -1,6 +1,4 @@
 /node_modules
-index.js
-index.spec.js
 package-lock.json
 package.json
 utils.js
