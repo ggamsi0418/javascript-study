@@ -23,3 +23,6 @@ https://www.evernote.com/l/AlNBQP3OewxEGaHjIUO--j5-sTPHqf50ws8/
 
 ### [테스트주도개발(TDD)로 만드는 NodeJS API 서버] Section 7. TDD로 하는 API 서버 개발
 https://www.evernote.com/l/AlMz4q6yw7pCpKeczHrSculE6RlzKo1VNE4/
+
+### [테스트주도개발(TDD)로 만드는 NodeJS API 서버] Section 8. 코드 리팩토링
+https://www.evernote.com/l/AlO43EM_TcJOXZLDXR5bFfQFBB5Z7JvWX5E/

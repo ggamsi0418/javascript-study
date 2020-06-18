@@ -14,8 +14,8 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "test": "mocha index.spec.js",
-    "start": "node index.js"
+    "test": "NODE_ENV=test mocha ./api/user/user.spec.js",
+    "start": "node ./bin/www.js"
   },
   "author": "",
   "license": "ISC"
