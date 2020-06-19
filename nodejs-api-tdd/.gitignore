@@ -4,3 +4,4 @@ package.json
 utils.js
 utils.spec.js
 deleted.index.spec.js
+db.sqlite

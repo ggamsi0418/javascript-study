@@ -1,16 +1,4 @@
-let users = [{
-        id: 1,
-        name: "alice",
-    },
-    {
-        id: 2,
-        name: "bek",
-    },
-    {
-        id: 3,
-        name: "chris",
-    },
-];
+const models = require("../../models");
 
 const index = (req, res) => {
     req.query.limit = req.query.limit || 10;
@@ -18,46 +6,57 @@ const index = (req, res) => {
     if (Number.isNaN(limit)) {
         return res.status(400).end();
     }
-    res.json(users.slice(0, limit));
-}
+
+    models.User.findAll({
+        limit: limit,
+    }).then(user => {
+        res.json(user);
+    });
+};
 
 const show = (req, res) => {
     const id = parseInt(req.params.id, 10);
-
     if (Number.isNaN(id)) return res.status(400).end();
 
-    const user = users.filter(user => user.id === id)[0];
-
-    if (!user) return res.status(404).end();
-
-    res.json(user);
-}
+    models.User.findOne({
+        where: {
+            id
+        },
+    }).then(user => {
+        if (!user) return res.status(404).end();
+        res.json(user);
+    });
+};
 
 const destroy = (req, res) => {
     const id = parseInt(req.params.id, 10);
     if (Number.isNaN(id)) return res.status(400).end();
 
-    users = users.filter(user => user.id !== id);
-    res.status(204).end();
-}
+    models.User.destroy({
+        where: {
+            id
+        },
+    }).then(() => {
+        res.status(204).end();
+    });
+};
 
 const create = (req, res) => {
     const name = req.body.name;
     if (!name) return res.status(400).end();
 
-    const isDuplicated = users.filter(user => user.name === name).length;
-    if (isDuplicated) return res.status(409).end();
 
-    const id = Date.now(); // 고유한 id를 부여하기 위해서
-
-    const user = {
-        id,
+    models.User.create({
         name
-    };
-    users.push(user);
-    res.status(201).json(user);
-}
-
+    }).then(user => {
+        res.status(201).json(user);
+    }).catch(err => {
+        if (err.name === "SequelizeUniqueConstraintError") {
+            return res.status(409).end();
+        }
+        res.status(500).end();
+    });
+};
 
 const update = (req, res) => {
     const id = parseInt(req.params.id, 10);
@@ -65,20 +64,31 @@ const update = (req, res) => {
 
     const name = req.body.name;
     if (!name) return res.status(400).end();
-    const isDuplicated = users.filter(user => user.name === name).length;
-    if (isDuplicated) return res.status(409).end();
 
-    const user = users.filter(user => user.id === id)[0];
-    if (!user) return res.status(404).end();
+    // 중복 체크는 모델(User 클래스)에서 처리
 
-    user.name = name;
+    models.User.findOne({
+        where: {
+            id
+        }
+    }).then(user => {
+        if (!user) return res.status(404).end();
+        user.name = name;
+        user.save().then(_ => {
+            res.json(user);
+        }).catch(err => {
+            if (err.name === "SequelizeUniqueConstraintError") {
+                return res.status(409).end();
+            }
+            res.status(500).end();
+        })
+    })
+};
 
-    res.json(user);
-}
 module.exports = {
     index,
     show,
     destroy,
     create,
-    update
-}
+    update,
+};

@@ -1,8 +1,26 @@
 const request = require("supertest");
 const should = require("should");
 const app = require("../../index");
+const models = require("../../models");
 
 describe("GET /users는 ", () => {
+    const users = [{
+            name: "alice",
+        },
+        {
+            name: "bek",
+        },
+        {
+            name: "chris",
+        },
+    ];
+    // done을 가지고 있는 콜백함수를 넘겨주는 이유는 DB 싱크가 비동기로 작업는 일이기 때문이다.
+    before(() =>
+        models.sequelize.sync({
+            force: true,
+        })
+    );
+    before(() => models.User.bulkCreate(users));
     describe("성공시", () => {
         it("user 객체를 담은 배열로 응답한다. ", done => {
             request(app)
@@ -32,6 +50,23 @@ describe("GET /users는 ", () => {
 });
 
 describe("GET /users/:id은 ", () => {
+    const users = [{
+            name: "alice",
+        },
+        {
+            name: "bek",
+        },
+        {
+            name: "chris",
+        },
+    ];
+    // done을 가지고 있는 콜백함수를 넘겨주는 이유는 DB 싱크가 비동기로 작업는 일이기 때문이다.
+    before(() =>
+        models.sequelize.sync({
+            force: true,
+        })
+    );
+    before(() => models.User.bulkCreate(users));
     describe("성공시 ", () => {
         it("id가 1인 user 객체를 반환한다. ", done => {
             request(app)
@@ -53,6 +88,23 @@ describe("GET /users/:id은 ", () => {
 });
 
 describe("DELETE /users/:id은", () => {
+    const users = [{
+            name: "alice",
+        },
+        {
+            name: "bek",
+        },
+        {
+            name: "chris",
+        },
+    ];
+    // done을 가지고 있는 콜백함수를 넘겨주는 이유는 DB 싱크가 비동기로 작업는 일이기 때문이다.
+    before(() =>
+        models.sequelize.sync({
+            force: true,
+        })
+    );
+    before(() => models.User.bulkCreate(users));
     describe("성공시", () => {
         it("204를 응답한다. ", done => {
             request(app).delete("/users/1").expect(204).end(done);
@@ -66,6 +118,23 @@ describe("DELETE /users/:id은", () => {
 });
 
 describe("POST /users", () => {
+    const users = [{
+            name: "alice",
+        },
+        {
+            name: "bek",
+        },
+        {
+            name: "chris",
+        },
+    ];
+    // done을 가지고 있는 콜백함수를 넘겨주는 이유는 DB 싱크가 비동기로 작업는 일이기 때문이다.
+    before(() =>
+        models.sequelize.sync({
+            force: true,
+        })
+    );
+    before(() => models.User.bulkCreate(users));
     describe("성공시 ", () => {
         let name = "daniel",
             body;
@@ -73,7 +142,7 @@ describe("POST /users", () => {
             request(app)
                 .post("/users")
                 .send({
-                    name
+                    name,
                 }) // ES6 문법
                 .expect(201)
                 .end((err, res) => {
@@ -96,7 +165,7 @@ describe("POST /users", () => {
             request(app)
                 .post("/users")
                 .send({
-                    name: "daniel"
+                    name: "daniel",
                 })
                 .expect(409)
                 .end(done);
@@ -104,14 +173,32 @@ describe("POST /users", () => {
     });
 });
 
-describe("PUT /Users/:id", () => {
+describe.only("PUT /Users/:id", () => {
+    const users = [{
+            name: "alice",
+        },
+        {
+            name: "bek",
+        },
+        {
+            name: "chris",
+        },
+    ];
+    // done을 가지고 있는 콜백함수를 넘겨주는 이유는 DB 싱크가 비동기로 작업는 일이기 때문이다.
+    before(() =>
+        models.sequelize.sync({
+            force: true,
+        })
+    );
+    before(() => models.User.bulkCreate(users));
+
     describe("성공시", () => {
         it("변경된 name을 응답한다.", done => {
             const name = "den";
             request(app)
                 .put("/users/3")
                 .send({
-                    name
+                    name,
                 })
                 .end((err, res) => {
                     res.body.should.have.property("name", name);
@@ -131,15 +218,19 @@ describe("PUT /Users/:id", () => {
             request(app)
                 .put("/users/999")
                 .send({
-                    name: "foo"
+                    name: "foo",
                 })
                 .expect(404)
                 .end(done);
         });
         it("이름이 중복일 경우 409를 응답한다.", done => {
-            request(app).put("/users/3").send({
-                name: "bek"
-            }).expect(409).end(done);
+            request(app)
+                .put("/users/3")
+                .send({
+                    name: "bek",
+                })
+                .expect(409)
+                .end(done);
         });
     });
 });
